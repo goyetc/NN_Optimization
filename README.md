@@ -4,20 +4,26 @@ Experimenting with learning rates, layer activations, initializers, and optimize
 #HW3: Comparing Hyperparameters
 * Note that much of the base code for this homework has been adopted from tensorboard tutorials found at: https://github.com/tensorflow/tensorboard/tree/master/docs/r2
 
+#HW3: Comparing Hyperparameters
+* Note that much of the base code for this homework has been adopted from tensorboard tutorials found at: https://github.com/tensorflow/tensorboard/tree/master/docs/r2
+
 ## Structure of homework
-* 1.0 General discussion of hyperparameters of interest:
-* - learning rate(s)
-* - layer activations
-* - initializers
-* - optimizers (we will stick with callable optimizers rather than custom/advanced implementations)
 
-* 1.1 Test base case (using "getting started' model as core model) with different learning rates
+#### Each section starts with a general discussion and notes on the hyper parameter of interest
+* - this discussion ends with a brief description of the choices of hyperparameter _flavors_ for initializers, optimizers, and activations
 
-* 1.2, 1.3, 1.4 Do a Hparam grid search on activations, optimizers, and initializers
-* - choose three _flavors_ from each of above Hparam class
-* - run grid search, for activationstotal of 27 models (3^3)
+#### Each section is then tested seperately based on choices discussed above
+* Note that the "control" choices for non-selected hparams are as follows:
+* - Initializers: default/no argument
+* - Optimizer: adam
+* - Activation: relu
 
-* 1.5 Discussion of results
+Based on personal experience, these are the best balance of performance vs computational efficiency, _for this dataset_
+
+#### Finally, we run a grid search on all combinations of activation functions, initializers, and optimizers. 
+* We allow for default learning rates in tihs section, to comprae each optimizers _base case_ performance. This is especially important given that some optimizers have variable learning rates
+
+* Final discussion of results
 
 ### Activations
 * softmax is the 'default' or gold standard
